@@ -27,12 +27,12 @@ namespace MvcApplication1.Controllers
             Incident model = new Incident();
             DateTime dt = new DateTime(2010, 12, 15);
             model.IncidentDate = dt;
-            model.Time = "10.00 AM";
+            model.Time = "10:00";
             model.ReportName = "Employee";
-            model.PersonName = "Mark Span";
+            model.PersonName = "Andrews Lee";
             model.Location = "Operating Room";
             model.ReportDesc = "Description goes here..................";
-            model.AddlInfo = "Description goes here..................";
+            model.AddlInfo = "Additional info goes here..................";
             model.Person1 = "Person 1 Name";
             model.Person2 = "Person 2 Name";
             model.Person3 = "Person 3 Name";
@@ -60,6 +60,15 @@ namespace MvcApplication1.Controllers
             model.IncidentDate = dt;
             return View(model);
         }
+        public ActionResult NewFacility()
+        {
+            return View();
+        }
+        public ActionResult ViewFacility()
+        {
+            return View();
+        }
+
         public ActionResult EditIncident()
         {
             return View();
@@ -73,8 +82,16 @@ namespace MvcApplication1.Controllers
         {
             return View();
         }
+        public ActionResult ListFacility()
+        {
+            return View();
+        }
 
         public ActionResult UserAdmin()
+        {
+            return View();
+        }
+        public ActionResult History()
         {
             return View();
         }
@@ -135,6 +152,41 @@ namespace MvcApplication1.Controllers
         {
             return View();
         }
+        public ActionResult ViewIncident()
+        {
+            return View();
+        }
+        public ActionResult CloseIncident()
+        {
+            Incident model = new Incident();
+            
+            DateTime dt = new DateTime(2010, 12, 15);
+            model.IncidentDate = dt;
+            model.ReportDate = dt;
+            model.IncidentNumber = "107888";
+            model.Time = "10:00";
+            model.ReportName = "Employee";
+            model.PersonName = "Andrews Lee";
+            model.Location = "Operating Room";
+            model.ReportDesc = "Description goes here..................";
+            model.AddlInfo = "Additional info goes here..................";
+            model.Person1 = "Person 1 Name";
+            model.Person2 = "Person 2 Name";
+            model.Person3 = "Person 3 Name";
+            model.Person4 = "Person 4 Name";
+            model.Person5 = "Person 5 Name";
+            model.Person6 = "Person 6 Name";
+            model.Category = "Patient Incident";
+            model.slc_target = "Unexpected Complication";
+            model.SubType = "Hemorrhage/Excessive Bleeding";
+            model.chkTransfer = true;
+            model.chkEmergency = true;
+            DateTime dt1 = DateTime.Now;
+            model.ClosedDate = dt1;
+
+            return View(model);
+        }
+
         public ActionResult IncidentSummaryRep()
         {
             return View();
@@ -164,6 +216,9 @@ namespace MvcApplication1.Controllers
                     return View("IncidentList");
                 case "Submit":
                     return View("Submitted");
+                case "Close":
+                    return View("CloseConfirmed");
+
                 default:
                     return View();
 

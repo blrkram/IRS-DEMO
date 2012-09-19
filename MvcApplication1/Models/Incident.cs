@@ -8,7 +8,9 @@ namespace MvcApplication1.Models
 {
     public class Incident
     {
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Incident Number")]
+        public string IncidentNumber { get; set; }
+
         [DataType(DataType.Date)]
         [Display(Name = "Incident Date")]
         public DateTime IncidentDate { get; set; }
@@ -27,7 +29,7 @@ namespace MvcApplication1.Models
 
 
         [DataType(DataType.Date)]
-        [Display(Name = "Report Date")]
+        [Display(Name = "Reported Date")]
         public DateTime ReportDate { get; set; }
 
         [Display(Name = "Description of the incident")]
@@ -59,8 +61,20 @@ namespace MvcApplication1.Models
         public bool chkTransfer { get; set; }
 
         [Display(Name = "Was tranfer emergent?")]
+
         public bool chkEmergency { get; set; }
 
+        [Display(Name = "Corrective Action")]
+        public string correctiveAction { get; set; }
+
+        [Display(Name = "Preventive Action")]
+        public string preventiveAction { get; set; }
+
+        [Display(Name = "Root Cause Analysis")]
+        public string RCA { get; set; }
+
+        [Display(Name = "Closed Date")]
+        public DateTime ClosedDate { get; set; }
 
 
     }
