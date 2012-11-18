@@ -12,13 +12,34 @@ namespace MvcApplication1.Models
         public string IncidentNumber { get; set; }
 
         [DataType(DataType.Date)]
-        [Display(Name = "Incident Date")]
+        [Display(Name = "Date of Incident")]
         public DateTime IncidentDate { get; set; }
 
-        [Display(Name = "Incident Time")]
+        [Display(Name = "Time of Incident")]
         public string Time { get; set; }
 
-        [Display(Name = "Person reporting Incident")]
+        [Display(Name = "Person communicated")]
+        public string PersonComm { get; set; }
+
+        [Display(Name = "Comm. Tim")]
+        public string CommTime { get; set; }
+        [DataType(DataType.Date)]
+        [Display(Name = "Comm. date")]
+        public DateTime commDate { get; set; }
+        [Display(Name = "Day of Week")]
+        public string DayofWeek { get; set; }
+
+        [Display(Name = "Witness")]
+        public bool WitnessCheck { get; set; }
+
+        [Display(Name = "Witness Name")]
+        public string WitnessName { get; set; }
+
+        [Display(Name = "Witness Address")]
+        public string WitnessAddress { get; set; }
+
+
+        [Display(Name = "Name of Person Completing Report")]
         public string ReportName { get; set; }
 
         [Display(Name = "Person Name")]
@@ -29,7 +50,7 @@ namespace MvcApplication1.Models
 
 
         [DataType(DataType.Date)]
-        [Display(Name = "Reported Date")]
+        [Display(Name = "Report Date")]
         public DateTime ReportDate { get; set; }
 
         [Display(Name = "Description of the incident")]
@@ -60,11 +81,11 @@ namespace MvcApplication1.Models
         [Display(Name = "Did incident result in a direct hospital transfer?")]
         public bool chkTransfer { get; set; }
 
-        [Display(Name = "Was tranfer emergent?")]
+        [Display(Name = "Was transfer emergent?")]
 
         public bool chkEmergency { get; set; }
 
-        [Display(Name = "Corrective Action")]
+        [Display(Name = "Action Taken")]
         public string correctiveAction { get; set; }
 
         [Display(Name = "Preventive Action")]
@@ -76,6 +97,46 @@ namespace MvcApplication1.Models
         [Display(Name = "Closed Date")]
         public DateTime ClosedDate { get; set; }
 
+        [Display(Name = "Involved Person Name")]
+        public string PatientName { get; set; }
+        [Display(Name = "Involved Person ID")]
+        public string PatientID { get; set; }
+
+        [Display(Name = "Condition Prior to Event")]
+        public string Condition { get; set; }
+
+        [Display(Name = "Severity of Event")]
+        public string Severity { get; set; }
+
+        [Display(Name = "Disposition")]
+        public string Disposition { get; set; }
+
+        [Display(Name = "Was Chart peer reviewed?")]
+        public bool bChart { get; set; }
+
+        [Display(Name = "Were any trends noted?")]
+        public bool bTrends { get; set; }
+
+        [Display(Name = "If Yes, explain?")]
+        public string TrendsDesc { get; set; }
+
+        [Display(Name = "Was standard of care met?")]
+        public bool bCare { get; set; }
+
+        [Display(Name = "If No, explain?")]
+        public string CareDesc { get; set; }
+
+        [Display(Name = "Was there an oppurtunity for improvement?")]
+        public bool bOppurtunity { get; set; }
+
+        [Display(Name = "If Yes, explain?")]
+        public string OppDesc { get; set; }
+
+        [Display(Name = "Recommendation")]
+        public string Recommendation { get; set; }
+
+        [Display(Name = "Comments/Follow-up/Outcome")]
+        public string Outcome { get; set; }
 
     }
 
